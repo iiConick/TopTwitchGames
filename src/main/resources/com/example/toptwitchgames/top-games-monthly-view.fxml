@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="515.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.toptwitchgames.TopGamesMonthlyController">
+   <children>
+      <BorderPane layoutX="198.0" layoutY="134.0" prefHeight="515.0" prefWidth="630.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                  <ComboBox fx:id="yearComboBox" prefWidth="150.0" promptText="Select Year" />
+                  <ComboBox fx:id="monthComboBox" prefWidth="150.0" promptText="Select Month" />
+              </items>
+            </ToolBar>
+         </bottom>
+         <center>
+            <BarChart fx:id="barChart" animated="false" BorderPane.alignment="CENTER">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </center>
+         <top>
+            <Label fx:id="titleLabel" text="Top Games By Monthly Average Viewers" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
