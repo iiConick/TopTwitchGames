@@ -43,3 +43,17 @@
 {
     -fx-background-color: #35605A;
 }
+.table-view{
+    -fx-background-color: #6B818C;
+}
+
+.table-view .column-header {
+    -fx-background-color: #8ba6af;
+}
+.table-row-cell:filled {
+    -fx-background-color: #60767a;
+
+}
+.table-row-cell:filled:selected .table-cell {
+    -fx-text-fill: #31E981;
+}
