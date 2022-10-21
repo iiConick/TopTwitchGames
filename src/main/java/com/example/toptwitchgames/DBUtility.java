@@ -16,7 +16,14 @@ public class DBUtility {
     public static String pw = "jz7vccKC96";
     private static String connURL = "jdbc:mysql://172.31.22.43:3306/Connor1152990";
 
-
+    /**
+     * This method is to populate the table view showing a more expanded view of the data displayed on the bar chart.\
+     * I use the Game as my data type and pass the information from the sql query into the model. I then populate the array list
+     * with the Game objects
+     * @param monthSelected
+     * @param yearSelected
+     * @return
+     */
     public static ArrayList<Game> getTopGamesTable(int monthSelected, Integer yearSelected)
     {
         ArrayList<Game> topGamesTable = new ArrayList<>();
@@ -47,6 +54,15 @@ public class DBUtility {
         return topGamesTable;
 
     }
+
+    /**
+     * This method populates the bar chart. It selects the x and y axis information from the database and stores them
+     * in a XYChart.Series variable. Once all of the bars (10) in the chart are populated, it returns the chart to the controller.
+     * The arguments passed in are from ComboBoxes in the UI.
+     * @param monthSelected
+     * @param yearSelected
+     * @return
+     */
     public static XYChart.Series<String, Integer> getTopGames(int monthSelected, Integer yearSelected) {
         XYChart.Series<String, Integer> topGames = new XYChart.Series<>();
 
@@ -72,6 +88,13 @@ public class DBUtility {
         return topGames;
     }
 
+    /**
+     * This method gets the line chart information. Similar to the bar chart, it pulls the x and y values from the database
+     * and populates a LineChart.Series variable. The arguments passed in are from the ComboBoxes in the UI
+     * @param gameName
+     * @param yearSelected
+     * @return
+     */
     public static LineChart.Series<String, Integer> getGamePerformance(String gameName, Integer yearSelected) {
         LineChart.Series<String, Integer> gamePerformance = new LineChart.Series<>();
 
@@ -97,6 +120,11 @@ public class DBUtility {
         return gamePerformance;
     }
 
+    /**
+     * This method returns all of the years available in the database. This is to populate a ComboBox with years
+     * relevant to the data.
+     * @return
+     */
     public static ArrayList<Integer> getDataYears() {
         ArrayList<Integer> years = new ArrayList<>();
 
@@ -117,6 +145,11 @@ public class DBUtility {
         }
         return years;
     }
+
+    /**
+     * This is to populate relevant months into a ComboBox.
+     * @return
+     */
     public static ArrayList<Integer> getDataMonths() {
         ArrayList<Integer> months = new ArrayList<>();
 
@@ -139,6 +172,14 @@ public class DBUtility {
         return months;
 
     }
+
+    /**
+     * This method retrieves an arraylist of game titles collected from the database based on popularity
+     * this method checks if there is a matching game title, and if there isn't it adds the game to the arraylist.
+     * If the current game already exists, it moves on to the next game.
+     * @param yearSelected
+     * @return
+     */
     public static ArrayList<String> getDataGames(int yearSelected)
     {
         boolean repeatedName = false;

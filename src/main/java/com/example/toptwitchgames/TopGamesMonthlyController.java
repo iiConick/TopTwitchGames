@@ -39,6 +39,11 @@ public class TopGamesMonthlyController implements Initializable {
     private Scene scene;
     private Parent root;
 
+    /**
+     * Setting barchart parameters, populating the ComboBoxes, and calling the setData method
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -51,14 +56,18 @@ public class TopGamesMonthlyController implements Initializable {
         setData(2020, 01);
 
     }
+
+    /**
+     * Switches the scene to the line graph view
+     * @param event
+     * @throws IOException
+     */
     public void switchToLineGraph(ActionEvent event) throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("game-performance-view.fxml"));
         root = loader.load();
         scene = new Scene(root);
-
-
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setTitle("Game Performance");
         stage.setScene(scene);
@@ -66,6 +75,13 @@ public class TopGamesMonthlyController implements Initializable {
 
 
     }
+
+    /**
+     * Changes the scene to the table view of the bar chart with more data added in. It also calls the controller and method
+     * setData from the Table Controller so infotmation about the month and year can be stored in between scenes
+     * @param event
+     * @throws IOException
+     */
     public void switchToAvgViewersTable(ActionEvent event) throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
@@ -84,6 +100,14 @@ public class TopGamesMonthlyController implements Initializable {
         stage.show();
 
     }
+
+    /**
+     * Initializes the bar chart to be shown, using arguments from the Table View. The arguments were originally
+     * data from this class, but have been passed to the Table View and back. It sets up listeners to listen for changes in the
+     * ComboBoxes. Once a change is sensed, the barchart will update all of the information accordingly.
+     * @param year
+     * @param month
+     */
     public void setData(int year, int month)
     {
         barChart.getData().clear();

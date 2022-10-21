@@ -1,0 +1,45 @@
+.root
+{
+    -fx-background-color: #35605A;
+
+}
+.tool-bar
+{
+    -fx-background-color: #00120B;
+}
+.button
+{
+    -fx-background-color: #35605A;
+    -fx-text-fill: #31E981;
+}
+
+.default-color0.chart-bar {
+    -fx-bar-fill: #31E981
+}
+.default-color0.chart-series-line {
+    -fx-stroke: #31E981;
+}
+
+.axis-label {
+    -fx-text-fill: #31E981;
+}
+
+.chart-plot-background {
+    -fx-background-color: #6B818C;
+}
+.axis
+{
+    -fx-tick-label-fill: #31E981;
+}
+.label
+{
+    -fx-text-fill: #31E981;
+}
+.combo-box
+{
+    -fx-background-color: #35605A;
+}
+.choice-box
+{
+    -fx-background-color: #35605A;
+}

@@ -49,6 +49,13 @@ public class TopGamesMonthlyTableController implements Initializable {
 
 
     }
+
+    /**
+     * Retrieves data about month and year from the TopGamesMonthlyController and uses it to display relevant information
+     * from the database to the chart depending on the arguments values.
+     * @param year
+     * @param month
+     */
     public void setData(int year, int month)
     {
         yearSelected = year;
@@ -62,6 +69,13 @@ public class TopGamesMonthlyTableController implements Initializable {
         averageChannelsLiveColumn.setCellValueFactory(new PropertyValueFactory<>("avgChannels"));
         tableView.getItems().addAll(DBUtility.getTopGamesTable(monthSelected, yearSelected));
     }
+
+    /**
+     * Switches back to the bar graph, passing the month and year information back through the setData method gathered from
+     * the other controller. It sets up the title of the scene dynamically as well.
+     * @param event
+     * @throws IOException
+     */
     public void switchToBarGraph(ActionEvent event) throws IOException
     {
         FXMLLoader loader = new FXMLLoader();

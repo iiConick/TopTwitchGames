@@ -24,6 +24,11 @@ public class Game {
         return game;
     }
 
+    /**
+     * Game could be anything on twitch, you can create your own category, so this is why I chose to not
+     * validate more than checking if it is empty
+     * @param game
+     */
     public void setGame(String game) {
         if(game.isBlank() || game.isEmpty())
         {
@@ -40,10 +45,14 @@ public class Game {
         return avgViewers;
     }
 
+    /**
+     * Validation protects the data from being unreadable
+     * @param avgViewers
+     */
     public void setAvgViewers(int avgViewers) {
-        if(avgViewers < 0)
+        if(avgViewers < 0 || avgViewers > 1000000)
         {
-            throw new IllegalArgumentException("Value of average viewers must be greater than 0");
+            throw new IllegalArgumentException("Value of average viewers must be greater than 0 and less than 1000000");
         }
         else
         {
@@ -56,6 +65,10 @@ public class Game {
         return hoursWatched;
     }
 
+    /**
+     * Hours watched is greater than 0
+     * @param hoursWatched
+     */
     public void setHoursWatched(int hoursWatched) {
         if(hoursWatched < 0)
         {
@@ -71,6 +84,10 @@ public class Game {
         return hoursStreamed;
     }
 
+    /**
+     * Hours streamed can be a very high number so I chose not to cap it, it cant be below 0
+     * @param hoursStreamed
+     */
     public void setHoursStreamed(int hoursStreamed) {
         if(hoursStreamed < 0)
         {
@@ -86,10 +103,14 @@ public class Game {
         return avgChannels;
     }
 
+    /**
+     * Average is capped to prevent unreadable data
+     * @param avgChannels
+     */
     public void setAvgChannels(int avgChannels) {
-        if(avgChannels < 0)
+        if(avgChannels < 0 || avgChannels > 200000)
         {
-            throw new IllegalArgumentException("Value of average channels must be greater than 0");
+            throw new IllegalArgumentException("Value of average channels must be greater than 0 and less than 200000");
         }
         else
         {

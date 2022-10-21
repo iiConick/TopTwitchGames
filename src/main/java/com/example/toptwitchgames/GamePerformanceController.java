@@ -41,6 +41,13 @@ public class GamePerformanceController implements Initializable {
     private int monthSelected;
     private String gameName;
     private int yearValue;
+
+    /**
+     * Initializes the line chart, adds the default chart into the view, and setup listeners to listen for changes in the ComboBox
+     * or ChoiceBox. When a change is detected, it clears the line graph and populates it with relevant data
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -68,6 +75,12 @@ public class GamePerformanceController implements Initializable {
         });
 
     }
+
+    /**
+     * Loads the barchart view
+     * @param event
+     * @throws IOException
+     */
     public void exitTable(ActionEvent event) throws IOException
     {
         FXMLLoader loader = new FXMLLoader();
