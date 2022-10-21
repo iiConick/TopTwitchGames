@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="515.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.toptwitchgames.TopGamesMonthlyController">
+<AnchorPane prefHeight="580.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.toptwitchgames.TopGamesMonthlyController">
    <children>
       <BorderPane layoutX="198.0" layoutY="134.0" prefHeight="515.0" prefWidth="630.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
@@ -13,6 +13,8 @@
               <items>
                   <ComboBox fx:id="yearComboBox" prefWidth="150.0" promptText="Select Year" />
                   <ComboBox fx:id="monthComboBox" prefWidth="150.0" promptText="Select Month" />
+                  <Button mnemonicParsing="false" onAction="#switchToAvgViewersTable" text="Average Viewers Table" />
+                  <Button mnemonicParsing="false" onAction="#switchToLineGraph" prefHeight="31.0" prefWidth="192.0" text="Game Performance Chart" />
               </items>
             </ToolBar>
          </bottom>

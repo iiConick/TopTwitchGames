@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="568.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.toptwitchgames.TopGamesMonthlyTableController">
+   <children>
+      <BorderPane layoutX="245.0" layoutY="139.0" prefHeight="507.0" prefWidth="704.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="gameTitleColumn" prefWidth="245.0" text="Game Title" />
+                <TableColumn fx:id="averageViewersColumn" prefWidth="157.0" text="Average Viewers" />
+                  <TableColumn fx:id="totalHoursWatchedColumn" prefWidth="200.0" text="Total Hours Watched" />
+                  <TableColumn fx:id="totalHoursStreamedColumn" prefWidth="183.0" text="Total Hours Streamed" />
+                  <TableColumn fx:id="averageChannelsLiveColumn" prefWidth="222.0" text="Average Channels Live" />
+              </columns>
+            </TableView>
+         </center>
+         <bottom>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                <Button mnemonicParsing="false" onAction="#switchToBarGraph" text="Bar Chart View" />
+              </items>
+            </ToolBar>
+         </bottom>
+         <top>
+            <Label fx:id="titleLabel" text=" " BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
