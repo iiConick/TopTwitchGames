@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class DBUtility {
-    public static String user = "Connor1152990";
-    public static String pw = "jz7vccKC96";
-    private static String connURL = "jdbc:mysql://172.31.22.43:3306/Connor1152990";
+    public static String user = "";
+    public static String pw = "";
+    private static String connURL = "";
 
     /**
      * This method is to populate the table view showing a more expanded view of the data displayed on the bar chart.\
